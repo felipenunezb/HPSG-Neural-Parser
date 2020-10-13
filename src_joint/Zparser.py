@@ -341,6 +341,8 @@ class MultiHeadAttention(nn.Module):
 
         outputs = self.residual_dropout(outputs, batch_idxs)
 
+        print(outputs)
+        print(residual)
         return self.layer_norm(outputs + residual), attns_padded
 
 #
