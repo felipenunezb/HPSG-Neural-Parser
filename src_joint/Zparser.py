@@ -288,7 +288,7 @@ class MultiHeadAttention(nn.Module):
         q_padded = Variable(q_padded)
         k_padded = Variable(k_padded)
         v_padded = Variable(v_padded)
-        invalid_mask = torch_t.ByteTensor(mb_size, len_padded).fill_(True)
+        invalid_mask = torch_t.BoolTensor(mb_size, len_padded).fill_(True)
 
         for i, (start, end) in enumerate(zip(batch_idxs.boundaries_np[:-1], batch_idxs.boundaries_np[1:])):
             q_padded[:,i,:end-start,:] = q_s[:,start:end,:]
