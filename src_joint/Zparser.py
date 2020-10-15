@@ -1394,7 +1394,9 @@ class ChartParser(nn.Module):
             for i, (start, end) in enumerate(zip(fp_startpoints, fp_endpoints)):
                 if len(sentences[i]) == 0:
                     print(i)
+                    print(sentences[i-1])
                     print(sentences[i])
+                    print(sentences[i+1])
                 tree, score = self.parse_from_annotations(fencepost_annotations_start[start:end,:],
                                                                         fencepost_annotations_end[start:end,:], sentences[i])
                 trees.append(tree)
