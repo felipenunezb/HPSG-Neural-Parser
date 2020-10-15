@@ -151,7 +151,7 @@ def decode(int force_gold, int sentence_len, np.ndarray[DTYPE_t, ndim=3] label_s
     # use helper functions and recursion
 
     # All fully binarized trees have the same number of nodes
-    print(sentence_len)
+    #print(sentence_len)
     cdef int num_tree_nodes = 2 * sentence_len - 1
     cdef np.ndarray[int, ndim=1] included_i = np.empty(num_tree_nodes, dtype=np.int32)
     cdef np.ndarray[int, ndim=1] included_j = np.empty(num_tree_nodes, dtype=np.int32)
