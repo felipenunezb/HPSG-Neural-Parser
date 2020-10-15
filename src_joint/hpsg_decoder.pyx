@@ -9,6 +9,9 @@ ORACLE_PRECOMPUTED_TABLE = {}
 
 @cython.boundscheck(False)
 def decode(int force_gold, int sentence_len, np.ndarray[DTYPE_t, ndim=3] label_scores_chart, np.ndarray[DTYPE_t, ndim=2] type_scores_chart, int is_train, gold, label_vocab, type_vocab):
+    
+    print(gold)
+    
     cdef DTYPE_t NEG_INF = -np.inf
 
     # Label scores chart is copied so we can modify it in-place for augmentated decode
