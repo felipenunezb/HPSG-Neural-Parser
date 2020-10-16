@@ -676,6 +676,7 @@ def run_parse(args):
             syntree_pred = []
             cun += 1
 
+    print(syntree_pred[0])
     if 0 < len(syntree_pred):
         save_data(syntree_pred, cun)
 
