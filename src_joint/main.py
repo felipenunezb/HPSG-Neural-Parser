@@ -6,6 +6,7 @@ import uuid
 
 import torch
 import torch.optim.lr_scheduler
+from tqdm import tqdm
 
 import numpy as np
 import math
@@ -665,7 +666,7 @@ def run_parse(args):
 
     syntree_pred = []
     cun = 0
-    for start_index in range(0, len(sentences), args.eval_batch_size):
+    for start_index in tqdm(range(0, len(sentences), args.eval_batch_size)):
         subbatch_sentences = sentences[start_index:start_index+args.eval_batch_size]
 
         subbatch_sentences = [[(dummy_tag, word) for word in sentence] for sentence in subbatch_sentences]
